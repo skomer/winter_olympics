@@ -9,7 +9,7 @@ class TestAthlete < MiniTest::Test
       'first_name' => "Jenny",
       'last_name' => "Jones",
       'name_convention' => "first last",
-      'nation_id' => nil
+      'nation_id' => 17
     }
     @athlete = Athlete.new(options)
   end
