@@ -11,10 +11,17 @@ class Nation
 
   def save()
     sql = "
-      
-
-    "
+      INSERT INTO nations (name)
+      VALUES ('#{@name}')
+      RETURNING *
+    ;"
+    nation = SqlRunner.run(sql).first
+    @id = nation['id'].to_i
   end
+
+
+
+
 
 
 end
