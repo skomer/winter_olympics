@@ -11,4 +11,6 @@ class Athlete
     @nation_id = options['nation_id'].to_i
   end
 
+
+
 end

@@ -9,4 +9,12 @@ class Nation
     @name = options.fetch('name')
   end
 
+  def save()
+    sql = "
+      
+
+    "
+  end
+
+
 end
