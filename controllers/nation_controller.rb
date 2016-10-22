@@ -8,6 +8,10 @@ get '/nations' do
 end
 
 # new
+get '/nations/new' do
+  erb(:'nations/new')
+end
+
 
 # create
 
