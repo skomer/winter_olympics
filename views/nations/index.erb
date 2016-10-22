@@ -1,1 +1,7 @@
 <h2>Here are all the nations</h2>
+
+<p><% @nations.each do |nation| %>
+    <%= nation.name %>
+    <br>
+  <% end %>
+</p>
