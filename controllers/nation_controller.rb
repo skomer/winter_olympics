@@ -12,10 +12,15 @@ get '/nations/new' do
   erb(:'nations/new')
 end
 
-
 # create
+post '/nations' do
+  @nation = Nation.new(params)
+  @nation.save()
+  erb(:'/nations/create')
+end
 
 # show
+
 
 # edit
 
