@@ -28,3 +28,40 @@ athlete2 = Athlete.new({
   })
 athlete2.save()
 
+event1 = Event.new({
+  'title' => "Skiathlon",
+  'venue' => "Alpensia",
+  'status' => "not occurred"
+  })
+event1.save()
+
+event2 = Event.new({
+  'title' => "15km Cross Country Free",
+  'venue' => "Alpensia",
+  'status' => "occurred"
+  })
+event2.save()
+
+event3 = Event.new({
+  'title' => "Curling",
+  'venue' => "Gangneung",
+  'status' => "cancelled"
+  })
+event3.save()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

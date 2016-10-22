@@ -37,3 +37,5 @@ CREATE TABLE athletes_events (
   event_id INT4 REFERENCES events(id) ON DELETE CASCADE,
   medal_id INT4 REFERENCES medals(id) ON DELETE CASCADE
 );
+
+
