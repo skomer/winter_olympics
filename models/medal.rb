@@ -5,7 +5,7 @@ class Medal
   attr_reader :id, :type
 
   def initialize(options)
-    @id = options['id']
+    @id = options['id'].to_i
     @type = options.fetch('type')
   end
 
