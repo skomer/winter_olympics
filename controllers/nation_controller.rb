@@ -20,7 +20,10 @@ post '/nations' do
 end
 
 # show
-
+get '/nations/:id' do
+  @nation = Nation.find(params[:id])
+  erb(:'/nations/show')
+end
 
 # edit
 

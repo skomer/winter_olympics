@@ -19,6 +19,16 @@ class Nation
     @id = nation['id'].to_i
   end
 
+  def self.find(id)
+    sql = "
+      SELECT * FROM nations
+      WHERE id = #{id}
+    ;"
+    nation = SqlRunner.run(sql)
+    return Nation.new(nation.first)
+  end
+
+
   def self.all()
     sql = " SELECT * FROM nations; "
     return Nation.map_items(sql)
