@@ -1,4 +1,4 @@
-
+require_relative '../db/sql_runner.rb'
 
 class Nation
 
@@ -19,9 +19,23 @@ class Nation
     @id = nation['id'].to_i
   end
 
+  def self.all()
+    sql = " SELECT * FROM nations; "
+    return Nation.map_items(sql)
+  end
 
-
-
+  def self.map_items(sql)
+    nations = SqlRunner.run(sql)
+    return nations.map { |nation| Nation.new(nation) }
+  end
 
 
 end
+
+
+
+
+
+
+
+
