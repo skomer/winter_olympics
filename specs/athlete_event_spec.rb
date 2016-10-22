@@ -7,7 +7,7 @@ class TestAthleteEvent < MiniTest::Test
   def setup
     options = {
       'status' => "",
-      'position' => "",
+      'position' => 11,
       'athlete_id' => 76,
       'event_id' => 12,
       'medal_id' => 0
