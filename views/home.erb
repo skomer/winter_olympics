@@ -1,5 +1,4 @@
-<h4>Find an athlete - click on a nation to show competing athletes</h4>
-
+<h4>Nations</h4>
 <p>
   <% @nations.each do |nation| %>
     <% id = nation.id %>
@@ -7,7 +6,22 @@
   <% end %>
 </p>
 
+<h4>Athletes</h4>
+<p>
+  <% @athletes.each do |athlete| %>
+    <% id = athlete.id %>
+    <a href="/athletes/<%= id %>"><%= athlete.full_name %></a><br>
+  <% end %>
+</p>
 
+
+<h4>Events</h4>
+<p>
+  <% @events.each do |event| %>
+    <% id = event.id %>
+    <a href="/events/<%= id %>"><%= event.title %></a><br>
+  <% end %>
+</p>
 
 
 

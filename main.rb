@@ -10,5 +10,7 @@ require_relative 'models/nation.rb'
 
 get '/' do
   @nations = Nation.all()
+  @athletes = Athlete.all()
+  @events = Event.all()
   erb :home
 end

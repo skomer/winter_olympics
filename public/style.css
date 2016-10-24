@@ -12,7 +12,8 @@ h1, h2 {
   color: navy;
 }
 
-a {
+a, a:visited {
+  color: limegreen;
   text-decoration: none;
 }
 
@@ -20,18 +21,10 @@ h3 {
   color: navy;
 }
 
-/*.navyText {
-  color: navy;
-}*/
-
 #main-div, #nav-bar {
   display: block;
   margin: auto;
 }
-
-/*.grid {
-  border: solid 3px orangered;
-}*/
 
 .grid-row {
   display: flex;
