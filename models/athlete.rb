@@ -12,8 +12,23 @@ class Athlete
   end
 
   def save()
-    
-
+    sql = "
+      INSERT INTO athletes (
+        first_name,
+        last_name,
+        name_convention,
+        nation_id
+      )
+      VAlUES (
+        '#{@first_name}',
+        '#{@last_name}',
+        '#{name_convention}',
+        #{@nation_id}
+        )
+      RETURNING *
+    ;"
+    athlete = SqlRunner.run(sql).first
+    @id = athlete['id'].to_i
   end
 
 
