@@ -38,4 +38,6 @@ CREATE TABLE athletes_events (
   medal_id INT4 REFERENCES medals(id) ON DELETE CASCADE
 );
 
-
+INSERT INTO medals (type) VALUES ('gold');
+INSERT INTO medals (type) VALUES ('silver');
+INSERT INTO medals (type) VALUES ('bronze');
