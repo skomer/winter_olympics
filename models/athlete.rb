@@ -31,6 +31,15 @@ class Athlete
     @id = athlete['id'].to_i
   end
 
+  def find(id)
+    sql = "
+      SELECT * FROM athletes
+      WHERE id = #{id}
+    ;"
+    return map_items(sql)
+  end
+
+
 
   def self.all()
     sql = "

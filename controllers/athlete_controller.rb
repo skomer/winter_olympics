@@ -16,6 +16,7 @@ end
 
 # create
 post '/athletes' do
+  binding.pry
   @athlete = Athlete.new(params)
   @athlete.save()
   erb(:'/athletes/create')
