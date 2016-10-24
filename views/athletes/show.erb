@@ -1,3 +1,9 @@
-<h2>Here is the requested athlete</h2>
+<h2><%= @athlete.full_name %></h2>
 
-<p><%= @athlete.full_name %></p>
+<% nation_id = @athlete.nation_id %>
+<% nation = Nation.find(nation_id) %>
+<p>
+  <a href="/nations/<%= nation.id %>">
+    <%= nation.name %>
+  </a>
+</p>

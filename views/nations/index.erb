@@ -1,7 +1,10 @@
 <h2>Here are all the nations</h2>
 
-<p><% @nations.each do |nation| %>
-    <%= nation.name %>
+<p>
+  <% @nations.each do |nation| %>
+    <a href="/nations/<%= nation.id %>">
+      <%= nation.name %>
+    </a>
     <br>
   <% end %>
 </p>

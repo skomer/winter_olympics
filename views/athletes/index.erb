@@ -2,6 +2,9 @@
 
 <p>
   <% @athletes.each do |athlete| %>
-    <%= athlete.full_name() %><br>
+    <a href="/athletes/<%= athlete.id %>">
+      <%= athlete.full_name() %>
+    </a>
+    <br>
   <% end %>
 </p>

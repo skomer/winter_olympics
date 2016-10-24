@@ -1,11 +1,15 @@
-<h2>Here is the requested nation</h2>
+<h2><%= @nation.name %></h2>
 
-<p><%= @nation.name %></p>
-
-<p>Athletes competing for this nation:
+<p>Athletes competing for <%= @nation.name %>:
   <ul>
     <% @athletes.each do |athlete| %>
-      <li><%= athlete.full_name %></li>
+      <a href="/athletes/<%= athlete.id %>">
+        <li>
+          <%= athlete.full_name %>
+        </li>
+      </a>
     <% end %>
   </ul>
 </p>
+
+<p>Events <%= @nation.name %> has entered:</p>

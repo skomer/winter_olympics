@@ -2,6 +2,9 @@
 
 <p>
   <% @events.each do |event| %>
-    <%= event.title %>
+    <a href="/events/<%= event.id %>">
+      <%= event.title %>
+    </a>
+    <br>
   <% end %>
 </p>
