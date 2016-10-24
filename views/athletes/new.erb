@@ -1,1 +1,25 @@
 <h2>Add a new athlete here</h2>
+
+<form action="/athletes" method="post">
+  <p>
+    <label for="first_name">First name (given name):</label>
+    <input type="text" name="first_name">
+  </p>
+
+  <p>
+    <label for="last_name">Last name (family name):</label>
+    <input type="text" name="last_name">
+  </p>  
+
+  <p>
+    <label for="name_convention">Name convention:</label>
+    <select name_convention>
+      <option label=" "></option>
+      <option value="name_convention">firstname lastname / givenname familyname</option>
+      <option value="name_convention">lastname firstname / familyname givenname</option>
+    </select>
+  </p>
+
+  <p><input type="submit" value="Submit new athlete"></p>
+
+</form>
