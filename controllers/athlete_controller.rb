@@ -22,7 +22,6 @@ end
 
 # show
 get '/athletes/:id' do
-  # binding.pry
   @athlete = Athlete.find(params[:id])
   erb(:'athletes/show')
 end

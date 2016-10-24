@@ -1,22 +1,37 @@
-<h4>Find events and athletes</h4>
+<h4>Find an athlete</h4>
 
-<form action="/nation" method="post">
-  <p>
-    <label for="title">Event title:</label>
-    <input type="text" name="title">
-  </p>
+<p>
+  <% @nations.each do |nation| %>
+    <% id = nation.id %>
+    <a href="/nations/<%= id %>"><%= nation.name %></a><br>
+  <% end %>
+</p>
 
+
+
+
+
+
+
+
+
+
+
+
+<!---
+<form action="/nations/" method="get">
   <p>
-    <label for="venue">Venue:</label>
-    <select name="venue">
-      <option label=" "></option>
-      <option value="Gangneung">Gangneung</option>
-      <option value="Kwandong">Kwandong</option>
-      <option value="Alpensia">Alpensia</option>
-      <option value="Jeongseon">Jeongseon</option>
-    </select>
+    <label for="id">Select the nation:</label>
+        <select name="id">
+          <option label=" "></option>
+          <% @nations.each do |nation| %>
+            <option value="<%= nation.id %>">
+              <%= nation.name %>
+            </option>
+          <% end %>
+        </select>
   </p>  
 
   <p><input type="submit" value="Find athletes"></p>
-
 </form>
+-->

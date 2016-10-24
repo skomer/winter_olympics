@@ -21,6 +21,7 @@ end
 
 # show
 get '/events/:id' do
+  # @athletes_events = AthletesEvents.find_athletes(params[:id])
   @event = Event.find(params[:id])
   erb(:'events/show')
 end

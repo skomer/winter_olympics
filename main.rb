@@ -6,7 +6,9 @@ require_relative 'controllers/nation_controller.rb'
 require_relative 'controllers/event_controller.rb'
 require_relative 'controllers/medal_controller.rb'
 require_relative 'controllers/athlete_event_controller.rb'
+require_relative 'models/nation.rb'
 
 get '/' do
+  @nations = Nation.all()
   erb :home
 end
