@@ -40,11 +40,13 @@ class Event
     return events.map { |event| Event.new(event) }
   end
 
-  def self.find()
+  def self.find(id)
     sql = "
-      
-
+      SELECT * FROM events
+      WHERE id = #{id}
     "
+    event = SqlRunner.run(sql)
+    return Event.new(event.first)
   end
 
 
