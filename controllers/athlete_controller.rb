@@ -1,5 +1,6 @@
 require 'pry-byebug'
 require_relative '../models/athlete.rb'
+require_relative '../models/nation.rb'
 
 # index
 get '/athletes' do
@@ -9,6 +10,7 @@ end
 
 # new
 get '/athletes/new' do
+  @nations = Nation.all()
   erb(:'athletes/new')
 end
 

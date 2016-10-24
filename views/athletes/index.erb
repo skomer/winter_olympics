@@ -1,1 +1,7 @@
 <h2>Here are all the athletes</h2>
+
+<p>
+  <% @athletes.each do |athlete| %>
+    <%= athlete.name %>
+  <% end %>
+</p>

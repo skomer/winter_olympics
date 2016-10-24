@@ -20,6 +20,19 @@
     </select>
   </p>
 
+  <p>
+    <label for="nation_id">Select the nation:</label>
+    <select name="nation_id">
+      <option label=" "></option>
+      <% @nations.each do |nation| %>
+        <% @nation_id = nation.id %>
+        <option value="<% nation.id %>">
+          <%= nation.name %>
+        </option>
+      <% end %>
+    </select>
+  </p>
+
   <p><input type="submit" value="Submit new athlete"></p>
 
 </form>
