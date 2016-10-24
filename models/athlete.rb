@@ -1,3 +1,4 @@
+require 'pry-byebug'
 
 class Athlete
 
@@ -8,7 +9,7 @@ class Athlete
     @first_name = options.fetch('first_name')
     @last_name = options.fetch('last_name')
     @name_convention = options.fetch('name_convention')
-    @nation_id = options['nation_id'].to_i
+    @nation_id = options['nation_id']
   end
 
   def save()
@@ -22,24 +23,24 @@ class Athlete
       VAlUES (
         '#{@first_name}',
         '#{@last_name}',
-        '#{name_convention}',
+        '#{@name_convention}',
         #{@nation_id}
         )
       RETURNING *
     ;"
+    binding.pry
     athlete = SqlRunner.run(sql).first
-    @id = athlete['id'].to_i
+    @id = athlete['id']
   end
 
-  def find(id)
+  def self.find(id)
     sql = "
       SELECT * FROM athletes
       WHERE id = #{id}
     ;"
-    return map_items(sql)
+    athlete = SqlRunner.run(sql)
+    return Athlete.new(athlete.first)
   end
-
-
 
   def self.all()
     sql = "
@@ -52,7 +53,5 @@ class Athlete
     athletes = SqlRunner.run(sql)
     return athletes.map { |athlete| Athlete.new(athlete) }
   end
-
-
 
 end
