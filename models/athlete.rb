@@ -11,6 +11,24 @@ class Athlete
     @nation_id = options['nation_id'].to_i
   end
 
+  def save()
+    
+
+  end
+
+
+  def self.all()
+    sql = "
+      SELECT * FROM athletes
+    ;"
+    return Athlete.map_items(sql)
+  end
+
+  def self.map_items(sql)
+    athletes = SqlRunner.run(sql)
+    return athletes.map { |athlete| Athlete.new(athlete) }
+  end
+
 
 
 end
