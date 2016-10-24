@@ -7,6 +7,75 @@ body {
   font-family: Roboto;
 }
 
+h1, h2 {
+  text-align: center;
+  color: navy;
+}
+
 a {
   text-decoration: none;
 }
+
+h3 {
+  color: navy;
+}
+
+/*.navyText {
+  color: navy;
+}*/
+
+#main-div, #nav-bar {
+  display: block;
+  margin: auto;
+}
+
+/*.grid {
+  border: solid 3px orangered;
+}*/
+
+.grid-row {
+  display: flex;
+  flex-direction: column;
+}
+
+.cell {
+  flex: 1;
+  padding: 10px;
+  /*border: 1px solid navy;*/
+  text-align: center;
+}
+
+/*media queries*/
+@media all and (min-width: 480px) {
+  .grid-row-sm {
+    flex-direction: row;
+  }
+  #main-div, #nav-bar {
+    max-width: 90%;
+  }
+}
+
+@media all and (min-width: 720px) {
+  .grid-row-md {
+    flex-direction: row;
+  }
+  #main-div, #nav-bar {
+    max-width: 75%;
+  }
+}
+
+@media all and (min-width: 960px) {
+  .grid-row-lg {
+    flex-direction: row;
+  }
+  #main-div, #nav-bar {
+    max-width: 50%;
+  }
+}
+
+
+
+/*#nav-bar img {
+  display: block;
+  margin: auto;
+}*/
