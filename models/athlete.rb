@@ -28,7 +28,6 @@ class Athlete
         )
       RETURNING *
     ;"
-    binding.pry
     athlete = SqlRunner.run(sql).first
     @id = athlete['id']
   end

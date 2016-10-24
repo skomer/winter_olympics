@@ -10,5 +10,43 @@ class Event
     @status = options.fetch('status')
   end
 
+  def save()
+    sql = "
+      INSERT INTO events (
+        title,
+        venue,
+        status
+      )
+      VALUES (
+        '#{@title}',
+        '#{@venue}',
+        '#{@status}'
+      )
+      RETURNING *
+    ;"
+    event = SqlRunner.run(sql).first
+    @id = event['id']
+  end
+
+  def self.all()
+    sql = "
+      SELECT * FROM events
+    ;"
+    return Event.map_items(sql)
+  end
+
+  def self.map_items(sql)
+    events = SqlRunner.run(sql)
+    return events.map { |event| Event.new(event) }
+  end
+
+  def self.find()
+    sql = "
+      
+
+    "
+  end
+
+
 
 end

@@ -1,6 +1,5 @@
 require 'pry-byebug'
 require_relative '../models/athlete.rb'
-# require_relative '../models/nation.rb'
 
 # index
 get '/athletes' do
@@ -16,10 +15,8 @@ end
 
 # create
 post '/athletes' do
-  binding.pry
   @athlete = Athlete.new(params)
   @athlete.save()
-  binding.pry
   erb(:'athletes/create')
 end
 
