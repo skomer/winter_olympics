@@ -2,7 +2,7 @@ require 'pry-byebug'
 
 class Athlete
 
-  attr_reader :id, :first_name, :last_name, :name_convention, :nation_id
+  attr_reader :id, :first_name, :last_name, :name_convention, :nation_id, :full_name
 
   def initialize(options)
     @id = options['id'].to_i
@@ -31,6 +31,16 @@ class Athlete
     athlete = SqlRunner.run(sql).first
     @id = athlete['id']
   end
+
+  def full_name()
+    if @name_convention == "last first"
+      @full_name = @last_name + " " + @first_name
+    else
+      @full_name = @first_name + " " + @last_name
+    end
+    return @full_name
+  end
+
 
   def self.find(id)
     sql = "
