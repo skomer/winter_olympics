@@ -1,4 +1,5 @@
 require_relative '../db/sql_runner.rb'
+# require_relative 'athlete.rb'
 
 class Nation
 
@@ -17,6 +18,14 @@ class Nation
     ;"
     nation = SqlRunner.run(sql).first
     @id = nation['id'].to_i
+  end
+
+  def self.find_athletes(id)
+    sql = "
+      SELECT * FROM athletes
+      WHERE nation_id = #{id}
+    ;"
+    return Athlete.map_items(sql)
   end
 
   def self.find(id)
@@ -38,7 +47,6 @@ class Nation
     nations = SqlRunner.run(sql)
     return nations.map { |nation| Nation.new(nation) }
   end
-
 
 end
 
