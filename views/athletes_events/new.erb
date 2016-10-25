@@ -3,7 +3,7 @@
 <form action="/athletes_events" method="post">
 <input type="hidden" name="medal_id" value=4 />
   <p>
-    <label for="event_id">Select an event:</label>
+    <label for="event_id">Select the event:</label>
     <select name="event_id" id="event_id">
       <option label=" "></option>
       <% @events.each do |event| %>
@@ -16,7 +16,7 @@
   </p>
 
   <p>
-    <label for="athlete_id">Select an athlete:</label>
+    <label for="athlete_id">Select the athlete:</label>
     <select name="athlete_id" id="athlete_id">
       <option label=" "></option>
       <% @athletes.each do |athlete| %>
