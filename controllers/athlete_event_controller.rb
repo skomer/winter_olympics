@@ -9,8 +9,12 @@ get '/athletes_events/new' do
   erb(:'athletes_events/new')
 end
 
-
 # create
+post '/athletes_events' do
+  @athlete_event = AthleteEvent.new(params)
+  @athlete_event.save()
+  erb(:'/athletes_events/create')
+end
 
 # show
 

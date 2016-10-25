@@ -1,10 +1,10 @@
 <h2>Enter an athlete into an event</h2>
 
 <form action="/athletes_events" method="post">
-
+<input type="hidden" name="medal_id" value=4 />
   <p>
-    <label for="events">Select an event:</label>
-    <select name="events" id="events">
+    <label for="event_id">Select an event:</label>
+    <select name="event_id" id="event_id">
       <option label=" "></option>
       <% @events.each do |event| %>
         <% event_id = event.id %>
@@ -16,8 +16,8 @@
   </p>
 
   <p>
-    <label for="athletes">Select an athlete:</label>
-    <select name="athletes" id="athletes">
+    <label for="athlete_id">Select an athlete:</label>
+    <select name="athlete_id" id="athlete_id">
       <option label=" "></option>
       <% @athletes.each do |athlete| %>
         <% athlete_id = athlete.id %>

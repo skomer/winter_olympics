@@ -41,3 +41,4 @@ CREATE TABLE athletes_events (
 INSERT INTO medals (type) VALUES ('gold');
 INSERT INTO medals (type) VALUES ('silver');
 INSERT INTO medals (type) VALUES ('bronze');
+INSERT INTO medals (type) VALUES ('no award');
