@@ -36,6 +36,27 @@ class AthleteEvent
     @id = athlete_event['id'].to_i
   end
 
+  def self.find_athletes(id)
+    sql = "
+      SELECT * FROM athletes
+      WHERE id = #{id}
+    ;"
+    return Athlete.map_items(sql).first
+  end
 
+  def self.find_events(id)
+    sql = "
+      SELECT * FROM events
+      WHERE id = #{id}
+    ;"
+    return Event.map_items(sql).first
+  end
 
 end
+
+
+
+
+
+
+
