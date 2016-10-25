@@ -90,38 +90,32 @@ athlete8.save()
 
 event1 = Event.new({
   'title' => "Skiathlon",
-  'venue' => "Alpensia",
-  'status' => "Not occurred"
+  'venue' => "Alpensia"
   })
 
 event2 = Event.new({
   'title' => "15km Cross Country Free",
-  'venue' => "Alpensia",
-  'status' => "Occurred"
+  'venue' => "Alpensia"
   })
 
 event3 = Event.new({
   'title' => "Curling",
-  'venue' => "Gangneung",
-  'status' => "Cancelled"
+  'venue' => "Gangneung"
   })
 
 event4 = Event.new({
   'title' => "Luge",
-  'venue' => "Alpensia",
-  'status' => "Not occurred"
+  'venue' => "Alpensia"
   })
 
 event5 = Event.new({
   'title' => "Skeleton",
-  'venue' => "Alpensia",
-  'status' => "Not occurred"
+  'venue' => "Alpensia"
   })
 
 event6 = Event.new({
   'title' => "Halfpipe",
-  'venue' => "Jeongseon",
-  'status' => "Not occurred"
+  'venue' => "Jeongseon"
   })
 
 event1.save()

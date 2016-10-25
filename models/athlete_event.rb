@@ -3,11 +3,10 @@ require 'pry-byebug'
 
 class AthleteEvent
 
-  attr_reader :id, :status, :position, :athlete_id, :event_id, :medal_id
+  attr_reader :id, :position, :athlete_id, :event_id, :medal_id
 
   def initialize(options)
     @id = options['id'].to_i
-    @status = options['status'] || 'Not occurred'
     @position = options['position'] || 0
     @athlete_id = options.fetch('athlete_id').to_i
     @event_id = options.fetch('event_id').to_i
@@ -17,14 +16,12 @@ class AthleteEvent
   def save()
     sql = "
       INSERT INTO athletes_events (
-        status,
         position,
         athlete_id,
         event_id,
         medal_id
         )
       VALUES (
-        '#{@status}',
         #{@position},
         #{@athlete_id},
         #{@event_id},

@@ -2,26 +2,23 @@ require 'pry-byebug'
 
 class Event
 
-  attr_reader :id, :title, :venue, :status
+  attr_reader :id, :title, :venue
 
   def initialize(options)
     @id = options['id'].to_i
     @title = options.fetch('title')
     @venue = options.fetch('venue')
-    @status = options.fetch('status')
   end
 
   def save()
     sql = "
       INSERT INTO events (
         title,
-        venue,
-        status
+        venue
       )
       VALUES (
         '#{@title}',
-        '#{@venue}',
-        '#{@status}'
+        '#{@venue}'
       )
       RETURNING *
     ;"

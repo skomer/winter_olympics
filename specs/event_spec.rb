@@ -8,13 +8,12 @@ class TestEvent < MiniTest::Test
     options = {
       'title' => "Alpine Super G",
       'venue' => "Jeongseon",
-      'status' => "not occurred"
     }
     @event = Event.new(options)
   end
 
-  def test_event_status
-    assert_equal("not occurred", @event.status)
+  def test_event_title
+    assert_equal("Alpine Super G", @event.title)
   end
 
   

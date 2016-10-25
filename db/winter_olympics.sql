@@ -25,13 +25,11 @@ CREATE TABLE athletes (
 CREATE TABLE events (
   id SERIAL4 PRIMARY KEY,
   title VARCHAR(255),
-  venue VARCHAR(255),
-  status VARCHAR(255)
+  venue VARCHAR(255)
 );
 
 CREATE TABLE athletes_events (
   id SERIAL4 PRIMARY KEY,
-  status VARCHAR(255),
   position INT2,
   athlete_id INT4 REFERENCES athletes(id) ON DELETE CASCADE,
   event_id INT4 REFERENCES events(id) ON DELETE CASCADE,
