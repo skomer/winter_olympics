@@ -1,3 +1,4 @@
+require 'pry-byebug'
 
 class Event
 
@@ -40,15 +41,31 @@ class Event
     return events.map { |event| Event.new(event) }
   end
 
-  def self.find(id)
+  def self.find(event_id)
     sql = "
       SELECT * FROM events
-      WHERE id = #{id}
+      WHERE id = #{event_id}
     "
     event = SqlRunner.run(sql)
     return Event.new(event.first)
   end
 
+  def self.find_athletes(id)
+    event_id = id.to_i
+    sql = "
+      SELECT * FROM athletes
+      INNER JOIN athletes_events
+      ON athletes.id = athletes_events.athlete_id
+      WHERE athletes_events.event_id = #{event_id}
+    ;"
+    return Athlete.map_items(sql)
+  end
 
 
 end
+
+
+
+
+
+

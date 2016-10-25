@@ -41,6 +41,19 @@ class Athlete
     return @full_name
   end
 
+  def self.full_names(athletes)
+    athletes_full_names = []
+    athletes.each do |athlete|
+      if athlete.name_convention == "last first"
+        full_name = athlete.last_name + " " + athlete.first_name
+        athletes_full_names.push(full_name)
+      else
+        full_name = athlete.first_name + " " + athlete.last_name
+      end
+      athletes_full_names.push(full_name)
+    end
+    return athletes_full_names
+  end
 
   def self.find(id)
     sql = "

@@ -3,9 +3,12 @@
 
 <p>Athletes competing in <%= @event.title %>:</p>
 
+<p>
+  <% @athletes_events.each do |athlete_event| %>
+    <%= athlete_event %><br>
+  <% end %>
+</p>
 
 
-
-
-<a href="">Edit this event</a>
+<a href="">Edit this event</a><br>
 <a href="">Delete this event</a>
