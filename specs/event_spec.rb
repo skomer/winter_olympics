@@ -7,7 +7,7 @@ class TestEvent < MiniTest::Test
   def setup
     options = {
       'title' => "Alpine Super G",
-      'venue' => "Jeongseon",
+      'venue' => "Jeongseon Alpine Centre",
     }
     @event = Event.new(options)
   end

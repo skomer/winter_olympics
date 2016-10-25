@@ -18,7 +18,8 @@ a, a:visited {
 }
 
 h3 {
-  color: navy;
+  color: orangered;
+  text-align: center;
 }
 
 #main-div, #nav-bar {
