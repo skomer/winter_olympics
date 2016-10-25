@@ -1,4 +1,3 @@
-require 'pry-byebug'
 require_relative '../models/athlete.rb'
 
 # index
