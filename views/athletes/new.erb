@@ -3,17 +3,17 @@
 <form action="/athletes" method="post">
   <p>
     <label for="first_name">First name (given name):</label>
-    <input type="text" name="first_name">
+    <input type="text" id="first_name" name="first_name">
   </p>
 
   <p>
     <label for="last_name">Last name (family name):</label>
-    <input type="text" name="last_name">
+    <input type="text" id="last_name" name="last_name">
   </p>  
 
   <p>
     <label for="name_convention">Name convention:</label>
-    <select name="name_convention">
+    <select name="name_convention" id="name_convention">
       <option label=" "></option>
       <option value="first last">firstname lastname</option>
       <option value="last first">lastname firstname</option>
@@ -22,7 +22,7 @@
 
   <p>
     <label for="nation_id">Select the nation:</label>
-    <select name="nation_id">
+    <select name="nation_id" id="nation_id">
       <option label=" "></option>
       <% @nations.each do |nation| %>
         <% nation_id = nation.id %>
