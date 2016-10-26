@@ -17,6 +17,10 @@ a, a:visited {
   text-decoration: none;
 }
 
+footer {
+  min-height: 60px;
+}
+
 h3 {
   color: orangered;
   text-align: center;
@@ -32,6 +36,26 @@ h3 {
   flex-direction: column;
 }
 
+.grid-row-header .cell {
+  font-weight: bold;
+}
+
+/*medal table*/
+table {
+    border-collapse: collapse;
+    /*width: auto;*/
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+/*end medal table*/
+
+
+
 .cell {
   flex: 1;
   padding: 10px;
@@ -39,9 +63,14 @@ h3 {
   text-align: center;
 }
 
+.grid-row-result .cell {
+  border: 1px solid navy;
+  text-align: left;
+}
+
 /*media queries*/
 @media all and (min-width: 480px) {
-  .grid-row-sm {
+  .grid-row-sm, .grid-row-header, .grid-row-result {
     flex-direction: row;
   }
   #main-div, #nav-bar {
@@ -66,9 +95,3 @@ h3 {
     max-width: 50%;
   }
 }
-
-
-/*#nav-bar img {
-  display: block;
-  margin: auto;
-}*/

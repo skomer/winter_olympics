@@ -1,5 +1,45 @@
 <h2><%= @nation.name %></h2>
 
+
+<p>Medal tally</p>
+
+<table style="width:100%">
+  <tr>
+    <td>Gold</td>
+    <td>
+      <% counter = 0 %>
+      <% @results.each do |result| %>
+        <% counter += 1 if result["medal_id"].to_i == 1 %>
+      <% end %>
+      <%= counter %>
+    </td> 
+  </tr>
+  <tr>
+    <td>Silver</td>
+    <td>
+    <% counter = 0 %>
+      <% @results.each do |result| %>
+        <% counter += 1 if result["medal_id"].to_i == 2 %>
+      <% end %>
+      <%= counter %>
+      </td> 
+  </tr>
+  <tr>
+    <td>Bronze</td>
+    <td>
+      <% counter = 0 %>
+      <% @results.each do |result| %>
+        <% counter += 1 if result["medal_id"].to_i == 3 %>
+      <% end %>
+      <%= counter %>
+
+    </td> 
+  </tr>
+</table>
+
+
+
+
 <p>Athletes competing for <%= @nation.name %>:
   <ul>
     <% @athletes.each do |athlete| %>
@@ -12,22 +52,42 @@
   </ul>
 </p>
 
-<p>Events <%= @nation.name %> has entered:
 
-</p>
+<h3>Full results</h3>
+
+<div class="grid">
+  <div class="grid-row grid-row-header">
+      <div class="cell">Event</div>
+      <div class="cell">First name</div>
+      <div class="cell">Last name</div>
+      <div class="cell">Position</div>
+      <div class="cell">Award</div>
+  </div>
+
+  <% @results.each do |result| %>
+    <div class="grid-row grid-row-result">
+        <div class="cell">
+          <% event = Event.event(result["event_id"]) %>
+          <%= event.title %>
+        </div>
+        <div class="cell"><%= result["first_name"] %></div>
+        <div class="cell"><%= result["last_name"] %></div>
+        <div class="cell"><%= result["position"] %></div>
+        <div class="cell"><%= result["type"] %></div>
+    </div>
+  <% end %>
+</div>
 
 
-<p>
-  <%= @nation.name %>'s medals:
-  <ul>
-    <% @medals.each do |medal| %>
-      <li>
-        <%= medal %>
-      </li>
-    <% end %>
-  </ul>
-</p>
-
-
+<br><br>
 <a href="">Edit this nation</a>
 <a href="">Delete this nation</a>
+
+
+
+
+
+
+
+
+

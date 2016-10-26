@@ -53,13 +53,15 @@ class Nation
       INNER JOIN athletes a ON ae.athlete_id = a.id
       INNER JOIN nations n ON a.nation_id = n.id
       WHERE n.id = #{nation_id}
+      ORDER BY ae.event_id
       ;"
-    return map_medals(sql)
+    @medals = map_medals(sql)
+    return @medals
   end
 
   def self.map_medals(sql)
     items = SqlRunner.run(sql)
-    return items.map { |item| item["first_name"] + " " + item["type"] }
+    return items.map { |item| item }
   end
 
 end
