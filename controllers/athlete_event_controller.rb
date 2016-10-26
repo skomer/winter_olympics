@@ -15,7 +15,6 @@ post '/athletes_events' do
   @athlete_event.save()
   @athlete = Athlete.athlete(params['athlete_id'])
   @event = Event.event(params['event_id'])
-  binding.pry
   erb(:'/athletes_events/create')
 end
 

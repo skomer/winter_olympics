@@ -46,7 +46,6 @@ class Athlete
     athletes.each do |athlete|
       if athlete.name_convention == "last first"
         full_name = athlete.last_name + " " + athlete.first_name
-        athletes_full_names.push(full_name)
       else
         full_name = athlete.first_name + " " + athlete.last_name
       end
@@ -66,16 +65,13 @@ class Athlete
   end
 
   def self.events(athlete_id)
-    # binding.pry
     athlete_id = athlete_id.to_i
-    # binding.pry
     sql = "
       SELECT * FROM events
       INNER JOIN athletes_events
       ON events.id = athletes_events.event_id
       WHERE athletes_events.athlete_id = #{athlete_id}
     ;"
-    # binding.pry
     return Event.map_items(sql)
   end
 

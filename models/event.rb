@@ -59,6 +59,17 @@ class Event
     return Athlete.map_items(sql)
   end
 
+  # def athletes()
+  #   event_id = @id
+  #   sql = "
+  #     SELECT * FROM athletes
+  #     INNER JOIN athletes_events
+  #     ON athletes.id = athletes_events.athlete_id
+  #     WHERE athletes_events.event_id = #{event_id}
+  #   ;"
+  #   return Athlete.map_items(sql)
+  # end
+
 
 end
 
