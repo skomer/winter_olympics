@@ -56,6 +56,7 @@ class Athlete
   end
 
   def self.athlete(athlete_id)
+    athlete_id = athlete_id.to_i
     sql = "
       SELECT * FROM athletes
       WHERE id = #{athlete_id}
@@ -65,12 +66,16 @@ class Athlete
   end
 
   def self.events(athlete_id)
+    # binding.pry
+    athlete_id = athlete_id.to_i
+    # binding.pry
     sql = "
       SELECT * FROM events
       INNER JOIN athletes_events
       ON events.id = athletes_events.event_id
       WHERE athletes_events.athlete_id = #{athlete_id}
     ;"
+    # binding.pry
     return Event.map_items(sql)
   end
 

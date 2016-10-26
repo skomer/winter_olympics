@@ -1,4 +1,14 @@
-<h4>Nations</h4>
+
+<a href="/nations">All nations</a><br>
+<a href="/nations/new">Add a nation</a><br>
+<a href="/athletes">All athletes</a><br>
+<a href="/athletes/new">Add an athlete</a><br>
+<a href="/events">All events</a><br>
+<a href="/events/new">Add an event</a><br>
+<a href="/athletes_events/new">Enter an athlete into an event</a>
+
+<!-- <h4>Nations</h4>
+
 <p>
   <% @nations.each do |nation| %>
     <% id = nation.id %>
@@ -21,26 +31,4 @@
     <% id = event.id %>
     <a href="/events/<%= id %>"><%= event.title %></a><br>
   <% end %>
-</p>
-
-
-
-
-
-<!---
-<form action="/nations/" method="get">
-  <p>
-    <label for="id">Select the nation:</label>
-        <select name="id">
-          <option label=" "></option>
-          <% @nations.each do |nation| %>
-            <option value="<%= nation.id %>">
-              <%= nation.name %>
-            </option>
-          <% end %>
-        </select>
-  </p>  
-
-  <p><input type="submit" value="Find athletes"></p>
-</form>
--->
+</p> -->

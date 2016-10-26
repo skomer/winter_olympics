@@ -39,6 +39,7 @@ class Event
   end
 
   def self.event(event_id)
+    event_id = event_id.to_i
     sql = "
       SELECT * FROM events
       WHERE id = #{event_id}
