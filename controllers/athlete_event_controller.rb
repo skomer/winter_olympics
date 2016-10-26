@@ -13,8 +13,8 @@ end
 post '/athletes_events' do
   @athlete_event = AthleteEvent.new(params)
   @athlete_event.save()
-  @athlete = AthleteEvent.find_athletes(params['athlete_id'])
-  @event = AthleteEvent.find_events(params['event_id'])
+  @athlete = Athlete.athlete(params['athlete_id'])
+  @event = Event.event(params['event_id'])
   erb(:'/athletes_events/create')
 end
 

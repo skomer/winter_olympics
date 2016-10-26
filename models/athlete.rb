@@ -55,13 +55,23 @@ class Athlete
     return athletes_full_names
   end
 
-  def self.find(id)
+  def self.athlete(athlete_id)
     sql = "
       SELECT * FROM athletes
-      WHERE id = #{id}
+      WHERE id = #{athlete_id}
     ;"
     athlete = SqlRunner.run(sql)
     return Athlete.new(athlete.first)
+  end
+
+  def self.events(athlete_id)
+    sql = "
+      SELECT * FROM events
+      INNER JOIN athletes_events
+      ON events.id = athletes_events.event_id
+      WHERE athletes_events.athlete_id = #{athlete_id}
+    ;"
+    return Event.map_items(sql)
   end
 
   def self.all()

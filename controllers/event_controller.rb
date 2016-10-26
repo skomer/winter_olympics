@@ -21,10 +21,9 @@ end
 
 # show
 get '/events/:id' do
-  athletes = Event.find_athletes(params[:id])
+  athletes = Event.athletes(params[:id])
   @athletes_events = Athlete.full_names(athletes)
-  # binding.pry
-  @event = Event.find(params[:id])
+  @event = Event.event(params[:id])
   erb(:'events/show')
 end
 

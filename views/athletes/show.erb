@@ -1,13 +1,22 @@
 <h2><%= @athlete.full_name %></h2>
 
 <% nation_id = @athlete.nation_id %>
-<% nation = Nation.find(nation_id) %>
+<% nation = Nation.nation(nation_id) %>
 <p>
   <a href="/nations/<%= nation.id %>">
     <%= nation.name %>
   </a>
 </p>
 
-<a href="">Edit this athlete</a>
-<a href="">Delete this athlete</a>
+
+<p>Competing in:</p>
+<p>
+  <% events = Athlete.events(params[:id]) %>
+  <% events.each do |event| %>
+    <%= event.title %><br>
+  <% end %>
+</p>
+
+<a href="">Edit this athlete</a><br>
+<a href="">Delete this athlete</a><br>
 <a href="">Edit this athlete's events</a>

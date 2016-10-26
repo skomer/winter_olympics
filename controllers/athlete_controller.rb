@@ -21,7 +21,7 @@ end
 
 # show
 get '/athletes/:id' do
-  @athlete = Athlete.find(params[:id])
+  @athlete = Athlete.athlete(params[:id])
   erb(:'athletes/show')
 end
 

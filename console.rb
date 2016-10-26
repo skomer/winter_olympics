@@ -482,7 +482,7 @@ athlete_event9 = AthleteEvent.new({
 
 athlete_event10 = AthleteEvent.new({
   'position' => 4,
-  'athlete_id' => 7,
+  'athlete_id' => 8,
   'event_id' => 2,
   'medal_id' => 4
   })

@@ -19,23 +19,22 @@ class Nation
     @id = nation['id'].to_i
   end
 
-  def self.find_athletes(id)
+  def self.athletes(nation_id)
     sql = "
       SELECT * FROM athletes
-      WHERE nation_id = #{id}
+      WHERE nation_id = #{nation_id}
     ;"
     return Athlete.map_items(sql)
   end
 
-  def self.find(id)
+  def self.nation(nation_id)
     sql = "
       SELECT * FROM nations
-      WHERE id = #{id}
+      WHERE id = #{nation_id}
     ;"
     nation = SqlRunner.run(sql)
     return Nation.new(nation.first)
   end
-
 
   def self.all()
     sql = " SELECT * FROM nations; "
