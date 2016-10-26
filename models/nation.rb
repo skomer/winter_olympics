@@ -1,5 +1,4 @@
 require_relative '../db/sql_runner.rb'
-require 'pry-byebug'
 
 class Nation
 
@@ -39,10 +38,10 @@ class Nation
 
   def self.all()
     sql = " SELECT * FROM nations; "
-    return Nation.map_items(sql)
+    return map_nations(sql)
   end
 
-  def self.map_items(sql)
+  def self.map_nations(sql)
     nations = SqlRunner.run(sql)
     return nations.map { |nation| Nation.new(nation) }
   end
@@ -55,14 +54,13 @@ class Nation
       INNER JOIN nations n ON a.nation_id = n.id
       WHERE n.id = #{nation_id}
       ;"
-    return Nation.map_items(sql)
+    return map_medals(sql)
   end
 
-  def self.map_items(sql)
+  def self.map_medals(sql)
     items = SqlRunner.run(sql)
     return items.map { |item| item["first_name"] + " " + item["type"] }
   end
-
 
 end
 
