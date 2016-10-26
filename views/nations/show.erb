@@ -12,7 +12,22 @@
   </ul>
 </p>
 
-<p>Events <%= @nation.name %> has entered:</p>
+<p>Events <%= @nation.name %> has entered:
+
+</p>
+
+
+<p>
+  <%= @nation.name %>'s medals:
+  <ul>
+    <% @medals.each do |medal| %>
+      <li>
+        <%= medal %>
+      </li>
+    <% end %>
+  </ul>
+</p>
+
 
 <a href="">Edit this nation</a>
 <a href="">Delete this nation</a>

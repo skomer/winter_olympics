@@ -1,4 +1,5 @@
 require_relative '../db/sql_runner.rb'
+require 'pry-byebug'
 
 class Nation
 
@@ -45,6 +46,23 @@ class Nation
     nations = SqlRunner.run(sql)
     return nations.map { |nation| Nation.new(nation) }
   end
+
+  def self.medals(nation_id)
+    sql = "
+      SELECT * FROM medals m
+      INNER JOIN athletes_events ae ON m.id = ae.medal_id
+      INNER JOIN athletes a ON ae.athlete_id = a.id
+      INNER JOIN nations n ON a.nation_id = n.id
+      WHERE n.id = #{nation_id}
+      ;"
+    return Nation.map_items(sql)
+  end
+
+  def self.map_items(sql)
+    items = SqlRunner.run(sql)
+    return items.map { |item| item["first_name"] + " " + item["type"] }
+  end
+
 
 end
 

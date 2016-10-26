@@ -23,6 +23,7 @@ end
 get '/nations/:id' do
   @nation = Nation.nation(params[:id])
   @athletes = Nation.athletes(params[:id])
+  @medals = Nation.medals(params[:id])
   erb(:'/nations/show')
 end
 
